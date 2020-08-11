@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>People Management System</h1>
+
+    <div> Number of people: {{no_people}} </div>
+    <div> <a href="new_person">Add person</a> </div>
+
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        <tbody>
+        {% for person in people %}
+            <tr>
+                <td>{{person.id}}</td>
+                <td>{{person.name}} {{person.last_name}} </td>
+                <td>{{person.email}}</td>
+                <td><a href="detail_person/{{person.id}}">See detail</a></td>
+                <td><a href="edit_person/{{person.id}}">Edit</a></td>
+                <td><a href="delete_person/{{person.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <br>
+
+    <div> Number of addresses: {{no_addresses}} </div>
+    <div> <a href="new_address">Add address</a> </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Street name</th>
+                    <th>Street no.</th>
+                    <th>City</th>
+                    <th>Zip code</th>
+                    <th>Country</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        <tbody>
+        {% for address in addresses %}
+            <tr>
+                <td>{{address.id}}</td>
+                <td>{{address.street_name}}</td>
+                <td>{{address.street_no}}</td>
+                <td>{{address.city}}</td>
+                <td>{{address.zip_code}}</td>
+                <td>{{address.country}}</td>
+                <td><a href="detail_address/{{address.id}}">See detail</a></td>
+                <td><a href="edit_address/{{address.id}}">Edit</a></td>
+                <td><a href="delete_address/{{address.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

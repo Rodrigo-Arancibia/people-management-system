@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Address detail</title>
+</head>
+<body>
+
+    <h1>Address detail</h1>
+    <div>Address id: {{address.id}}</div>
+    <div>Street name: {{address.street_name}}</div>
+    <div>Street no.: {{address.street_no}}</div>
+    <div>Zip code: {{address.zip_code}}</div>
+    <div>City: {{address.city}}</div>
+    <div>Country: {{address.country}}</div>
+
+    <a href="{% url 'index' %}">Back to home</a>
+</body>
+</html>
